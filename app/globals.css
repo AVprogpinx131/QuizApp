@@ -2,26 +2,129 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+html,
+body {
+  overflow-x: hidden;
+}
+
+main {
+  padding: 1rem;
+}
+
+h3 {
+  padding-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+button {
+  padding: 16px 8px;
+  margin-top: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #ff8800;
+  color: #f8f8f8;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.btn-disabled {
+  background-color: #ff8800;
+}
+
+.image-container {
+  min-height: 50vh;
+}
+
+.quiz-content {
+  position: relative;
+  padding: 2.5rem;
+  border-radius: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+li {
+  list-style-type: none;
+  cursor: pointer;
+  margin: 9px 0;
+  padding: 16px 8px;
+  color: #000105;
+}
+
+.li-hover:hover {
+  background-color: #a8a8a87e;
+  columns: #fff;
+  border-radius: 10px;
+}
+
+.li-selected {
+  color: #fff;
+  background-color: #444444b9;
+  border-radius: 10px;
+}
+
+.quiz-container {
+  margin-top: 2rem;
+}
+
+.container p {
+  padding: 8px 0;
+}
+
+.images-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 6em;
+  padding: 1em 0;
+  background-color: rgb(3, 83, 148);
+  border-radius: 50px;
+}
+
+.images-text-container {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  border-left-width: 4px;
+  border-right-width: 4px;
+  padding: 0 2.5rem;
+}
+
+.images-text {
+  color: white;
+}
+
+.game-paragraph {
+  color: white;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 750px) {
+  .images-container {
+    display: block;
+    margin: 0;
+    padding: 0;
+    background: none;
+    padding-top: 2em;
+  }
+  .images-text {
+    display: none;
+  }
+  .image {
+    display: flex;
+    justify-content: end;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@media (max-width: 550px) {
+  h3,
+  .game-paragraph {
+    font-size: 1.1rem;
+  }
 }
