@@ -105,6 +105,35 @@ li {
   font-size: 1.2rem;
 }
 
+
+#table-tennis-ball {
+  animation: firstBall 0.5s ease-in infinite alternate;
+  transform-box: fill-box;
+}
+
+@keyframes firstBall {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
+#football {
+  animation: secondBall 0.5s ease-in infinite alternate;
+  transform-box: fill-box;
+}
+
+@keyframes secondBall {
+  from {
+    transform: translateY(-70%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
 @media (max-width: 750px) {
   .images-container {
     display: block;
