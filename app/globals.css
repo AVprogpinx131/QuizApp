@@ -37,10 +37,6 @@ button {
   background-color: #ff8800;
 }
 
-.image-container {
-  min-height: 50vh;
-}
-
 .quiz-content {
   position: relative;
   padding: 2.5rem;
@@ -66,10 +62,6 @@ li {
   color: #fff;
   background-color: #444444b9;
   border-radius: 10px;
-}
-
-.quiz-container {
-  margin-top: 2rem;
 }
 
 .container p {
@@ -104,7 +96,6 @@ li {
   text-align: center;
   font-size: 1.2rem;
 }
-
 
 #table-tennis-ball {
   animation: firstBall 0.5s ease-in infinite alternate;
@@ -147,7 +138,7 @@ li {
   }
   .image {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
   }
 }
 

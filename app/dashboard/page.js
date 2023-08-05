@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { quiz } from "../data.js";
 import { BiArrowBack } from "react-icons/bi";
-import Image from "next/image.js";
+import Image from "next/legacy/image.js";
 import Link from "next/link";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
@@ -82,12 +82,12 @@ const page = () => {
 
   return (
     <main>
-      <div class="w-8 mb-4">
+      <div class="w-8 mb-6">
         <Link href="/">
           <BiArrowBack class="w-8 h-8" />
         </Link>
       </div>
-      <h1>Quiz Page</h1>
+      <h1 class="pb-3">Quiz Page</h1>
       <div>
         <h2>
           Question: {activeQuestion + 1}
@@ -95,17 +95,16 @@ const page = () => {
         </h2>
       </div>
       {!showResult ? (
-        <div className="quiz-container">
-          <div class="relative p-5 flex justify-center items-center">
-            <div className="image-container">
-              <Image
-                src={source}
-                alt=""
-                layout="fill"
-                objectFit="cover"
-                class="rounded-lg"
-              />
-            </div>
+        <div class="mt-7">
+          <div class="py-10 px-5 relative flex justify-center items-center">
+            <Image
+              src={source}
+              alt="quiz background image"
+              layout="fill"
+              objectFit="cover"
+              priority={true}
+              class="rounded-lg"
+            />
             <div className="quiz-content">
               <h3 class="text-white">{question}</h3>
               {answers.map((answer, idx) => (
