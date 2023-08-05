@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["images.pexels.com", "miro.medium.com", "www.cnet.com"],
+    domains: ["quiz-app-rose-beta.vercel.app"],
   },
 };
 
