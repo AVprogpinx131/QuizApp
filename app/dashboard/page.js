@@ -71,10 +71,10 @@ const page = () => {
     return (
       <main>
         <Link href="/">
-          <Skeleton width={32} height={32} style={{ marginBottom: "1rem" }} />
+          <Skeleton width={32} height={32} style={{ marginBottom: "1.5rem" }} />
         </Link>
         <Skeleton />
-        <Skeleton style={{ marginBottom: "2em" }} />
+        <Skeleton style={{ marginTop: "0.75em", marginBottom: "2em" }} />
         <Skeleton height={500} style={{ borderRadius: "10px" }} />
       </main>
     );
@@ -87,51 +87,51 @@ const page = () => {
           <BiArrowBack class="w-8 h-8" />
         </Link>
       </div>
-      <h1 class="pb-3">Quiz Page</h1>
-      <div>
-        <h2>
-          Question: {activeQuestion + 1}
-          <span>/{questions.length}</span>
-        </h2>
-      </div>
       {!showResult ? (
-        <div class="mt-7">
-          <div class="py-10 px-5 relative flex justify-center items-center">
-            <Image
-              src={source}
-              alt="quiz background image"
-              layout="fill"
-              objectFit="cover"
-              priority={true}
-              class="rounded-lg"
-            />
-            <div className="quiz-content">
-              <h3 class="text-white">{question}</h3>
-              {answers.map((answer, idx) => (
-                <li
-                  key={idx}
-                  onClick={() => onAnswerSelected(answer, idx)}
-                  className={
-                    selectedAnswerIndex === idx ? "li-selected" : "li-hover"
-                  }
-                >
-                  <span class="text-white">{answer}</span>
-                </li>
-              ))}
-              {checked ? (
-                <button onClick={nextQuestion} className="btn">
-                  {activeQuestion === question.length - 1 ? "Finish" : "Next"}
-                </button>
-              ) : (
-                <button
-                  onClick={nextQuestion}
-                  disabled
-                  className="btn-disabled"
-                >
-                  {" "}
-                  {activeQuestion === question.length - 1 ? "Finish" : "Next"}
-                </button>
-              )}
+        <div>
+          <h1 class="pb-3">Quiz Page</h1>
+          <h2>
+            Question: {activeQuestion + 1}
+            <span>/{questions.length}</span>
+          </h2>
+          <div class="mt-7">
+            <div class="py-10 px-5 relative flex justify-center items-center">
+              <Image
+                src={source}
+                alt="quiz background image"
+                layout="fill"
+                objectFit="cover"
+                priority={true}
+                class="rounded-lg"
+              />
+              <div className="quiz-content">
+                <h3 class="text-white">{question}</h3>
+                {answers.map((answer, idx) => (
+                  <li
+                    key={idx}
+                    onClick={() => onAnswerSelected(answer, idx)}
+                    className={
+                      selectedAnswerIndex === idx ? "li-selected" : "li-hover"
+                    }
+                  >
+                    <span class="text-white">{answer}</span>
+                  </li>
+                ))}
+                {checked ? (
+                  <button onClick={nextQuestion} className="btn">
+                    {activeQuestion === question.length - 1 ? "Finish" : "Next"}
+                  </button>
+                ) : (
+                  <button
+                    onClick={nextQuestion}
+                    disabled
+                    className="btn-disabled"
+                  >
+                    {" "}
+                    {activeQuestion === question.length - 1 ? "Finish" : "Next"}
+                  </button>
+                )}
+              </div>
             </div>
           </div>
         </div>
@@ -151,7 +151,9 @@ const page = () => {
           <p>
             Wrong Answers: <span>{result.wrongAnswers}</span>
           </p>
-          <button onClick={() => window.location.reload()}>Restart</button>
+          <button onClick={() => window.location.reload()} class="mt-10">
+            Restart
+          </button>
         </div>
       )}
     </main>
